@@ -1,7 +1,7 @@
 Pritunl Python SDK
 =========
 
-Unofficial [Pritunl](https://pritunl.com) SDK written in Python that allows to easily intract with Pritunl API.
+Unofficial [Pritunl](https://pritunl.com) SDK written in Python that allows to easily interacts with Pritunl API.
 
 ## Install
 
