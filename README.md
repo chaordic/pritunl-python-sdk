@@ -14,14 +14,14 @@ pip install -e git+git@github.com:chaordic/pritunl-python-sdk.git@master#egg=pri
 From PyPi
 
 ```
-pip install pritunlapiclient
+pip install pritunlsdk
 ```
 
 ## Dependencies
 
 * Self hosted pritunl
 * Valid administrator user
-* Valid **token authentication**
+* Valid token authentication
 
 Export the following variables in environment:
 
