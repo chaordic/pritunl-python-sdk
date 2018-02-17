@@ -5,7 +5,6 @@ import hmac
 import hashlib
 import base64
 import requests
-import json
 import logging
 
 LOGGER = logging.getLogger(__name__)
@@ -14,11 +13,15 @@ API_TOKEN = os.getenv('PRITUNL_API_TOKEN')
 API_SECRET = os.getenv('PRITUNL_API_SECRET')
 BASE_URL = os.getenv('PRITUNL_API_URL')
 
+
 # Taken from https://pritunl.com/api
 def pritunl_auth_request(method, path, headers=None, data=None):
     auth_timestamp = str(int(time.time()))
     auth_nonce = uuid.uuid4().hex
-    auth_string = '&'.join([API_TOKEN, auth_timestamp, auth_nonce,
+    auth_string = '&'.join([
+        API_TOKEN,
+        auth_timestamp,
+        auth_nonce,
         method.upper(), path])
     auth_signature = base64.b64encode(hmac.new(
         API_SECRET, auth_string, hashlib.sha256).digest())
